@@ -1,7 +1,7 @@
 import { Provider } from "@nestjs/common";
-import { IUsersRepository } from "./users.repository";
+import { IUsersRepository } from "../models/users.repository";
 
-import { UserRepositoryMock } from "../mocks/user.util";
+import { UserRepositoryMock } from "./users.mock.repository";
 
 import { PrismaUserRepository } from "./users.prisma.repository";
 

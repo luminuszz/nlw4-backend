@@ -4,7 +4,7 @@ import { HashService } from "shared/providers/hash/hash.service";
 import { CreateUserDTO } from "./dto/create-user";
 import { UpdateUserDTO } from "./dto/update-user.dto";
 
-import { IUsersRepository } from "./repositories/users.repository";
+import { IUsersRepository } from "./models/users.repository";
 
 @Injectable()
 export class UsersService {
@@ -68,5 +68,9 @@ export class UsersService {
 		}
 
 		return user;
+	}
+
+	async findAll() {
+		return this.usersRepository.findAll();
 	}
 }

@@ -1,17 +1,7 @@
-import { CreateUserDTO } from "../dto/create-user";
-
-import * as faker from "faker";
-import { User } from "../models/users.model";
+import { User } from "@prisma/client";
 import { v4 } from "uuid";
+import { CreateUserDTO } from "../dto/create-user";
 import { UpdateUserDTO } from "../dto/update-user.dto";
-
-export const userFactory = {
-	createUserDTO: (): CreateUserDTO => ({
-		email: faker.internet.email(),
-		name: faker.name.firstName(),
-		password: faker.random.alphaNumeric().toString(),
-	}),
-};
 
 export class UserRepositoryMock {
 	private model: User[] = [];

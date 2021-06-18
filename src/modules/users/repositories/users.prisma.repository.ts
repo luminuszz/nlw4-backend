@@ -4,7 +4,7 @@ import { User } from "../models/users.model";
 import { PrismaRepository } from "shared/prisma/prisma.repository";
 import { CreateUserDTO } from "../dto/create-user";
 import { UpdateUserDTO } from "../dto/update-user.dto";
-import { IUsersRepository } from "./users.repository";
+import { IUsersRepository } from "../models/users.repository";
 
 type UserRepositoryInterface = Prisma.UserDelegate<
 	Prisma.RejectOnNotFound | Prisma.RejectPerOperation

@@ -32,6 +32,6 @@ module.exports = {
 	testEnvironment: "node",
 
 	setupFiles: ["dotenv/config"],
-	globalSetup: "./setupFiles.ts",
-	globalTeardown: "./teardown.ts",
+	globalSetup: "./config/setupFiles.ts",
+	globalTeardown: "./config/teardown.ts",
 };

@@ -3,7 +3,7 @@ import { UsersService } from "./users.service";
 
 import { UsersRepository } from "./repositories";
 import { HashProviderModule } from "shared/providers/hash/hash.module";
-import { userFactory } from "./mocks/user.util";
+import { userFactory } from "shared/utils/user.util";
 import { BadRequestException } from "@nestjs/common";
 
 describe("users.service", () => {
