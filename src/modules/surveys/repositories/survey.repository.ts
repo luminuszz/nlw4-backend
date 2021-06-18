@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaRepository } from 'src/shared/prisma/prisma.repository';
+import { Injectable } from "@nestjs/common";
+import { PrismaRepository } from "shared/prisma/prisma.repository";
 
 @Injectable()
 class SurveyRepository {

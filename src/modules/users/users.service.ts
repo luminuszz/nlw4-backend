@@ -49,4 +49,24 @@ export class UsersService {
 
 		return this.usersRepository.update(id, { ...updateUserDTO });
 	}
+
+	async findUserByEmail(email: string) {
+		const user = await this.usersRepository.findUnique("email", email);
+
+		if (!user) {
+			throw new BadRequestException("User not found");
+		}
+
+		return user;
+	}
+
+	async findUserById(id: string) {
+		const user = await this.usersRepository.findUnique("id", id);
+
+		if (!user) {
+			throw new BadRequestException("User not found");
+		}
+
+		return user;
+	}
 }

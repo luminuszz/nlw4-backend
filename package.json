@@ -18,10 +18,11 @@
 		"test:watch": "jest --watch",
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-		"test:e2e": "jest --config ./test/jest-e2e.json",
+		"test:e2e": "yarn open_api_container && cp ./.env.test2e .env && jest --detectOpenHandles --config ./test/jest-e2e.js",
 		"prisma": "docker exec app_api npx prisma",
 		"prisma-studio": "export DB_HOST=localhost &&  npx prisma studio --port=8000 --hostname=localhost",
-		"start:docker:dev": "nest start --watch"
+		"start:docker:dev": "nest start --watch",
+		"open_api_container": "docker exec app_api bash"
 	},
 	"dependencies": {
 		"@nestjs/common": "^7.6.15",
@@ -37,6 +38,7 @@
 		"reflect-metadata": "^0.1.13",
 		"rimraf": "^3.0.2",
 		"rxjs": "^6.6.6",
+		"shelljs": "^0.8.4",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
@@ -48,6 +50,7 @@
 		"@types/faker": "^5.5.6",
 		"@types/jest": "^26.0.22",
 		"@types/node": "^14.14.36",
+		"@types/shelljs": "^0.8.8",
 		"@types/supertest": "^2.0.10",
 		"@types/uuid": "^8.3.0",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",

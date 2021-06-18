@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { HashProvider } from './hash.provider';
+import { Injectable } from "@nestjs/common";
+import { HashProvider } from "./hash.provider";
 
 @Injectable()
 export class HashService {
