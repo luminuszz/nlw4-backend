@@ -10,6 +10,11 @@ abstract class IUsersRepository {
 	abstract findAll(): Promise<User[]> | User[];
 
 	abstract findUnique(key: keyof User, value: string): Promise<User> | User;
+
+	abstract findUserByEmailWithoutUserId(
+		email: string,
+		id: string
+	): Promise<User> | User;
 }
 
 export { IUsersRepository };

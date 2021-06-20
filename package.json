@@ -14,15 +14,16 @@
 		"start:debug": "nest start --debug --watch",
 		"start:prod": "node dist/main",
 		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-		"test": "export NODE_ENV=testing && jest",
+		"test": "export NODE_ENV=testing && jest --expand  --verbose  ",
 		"test:watch": "jest --watch",
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "yarn open_api_container && cp ./.env.test2e .env && jest --detectOpenHandles --config ./test/jest-e2e.js",
 		"prisma": "docker exec app_api npx prisma",
 		"prisma-studio": "export DB_HOST=localhost &&  npx prisma studio --port=8000 --hostname=localhost",
-		"start:docker:dev": "nest start --watch",
-		"open_api_container": "docker exec app_api bash"
+		"start:docker:dev": "export NODE_ENV=development && nest start --watch",
+		"open_api_container": "docker exec  app_api bash",
+		"dev": "docker-compose --env-file=./.env.development up"
 	},
 	"dependencies": {
 		"@nestjs/common": "^7.6.15",

@@ -40,4 +40,18 @@ export class PrismaUserRepository implements IUsersRepository {
 			where: { [key]: value },
 		});
 	}
+
+	async findUserByEmailWithoutUserId(
+		email: string,
+		id: string
+	): Promise<User> {
+		return this.interface.findFirst({
+			where: {
+				email,
+				NOT: {
+					id,
+				},
+			},
+		});
+	}
 }

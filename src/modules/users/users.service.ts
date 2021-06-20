@@ -41,6 +41,18 @@ export class UsersService {
 			throw new BadRequestException("User not found");
 		}
 
+		if (updateUserDTO.email) {
+			const verifyOtherUserHasThisEmail =
+				await this.usersRepository.findUserByEmailWithoutUserId(
+					updateUserDTO.email,
+					id
+				);
+
+			if (verifyOtherUserHasThisEmail) {
+				throw new BadRequestException("This email already in use");
+			}
+		}
+
 		if (updateUserDTO.password) {
 			updateUserDTO.password = await this.hashService.hashValue(
 				updateUserDTO.password
