@@ -54,7 +54,7 @@ describe("users.service", () => {
 		});
 	});
 
-	describe(" find by email", () => {
+	describe("find by email", () => {
 		it("should be able to find one user by email", async () => {
 			const createUserDTO = userFactory.createUserDTO();
 
