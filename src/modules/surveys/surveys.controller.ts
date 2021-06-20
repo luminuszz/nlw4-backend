@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { Survey } from '@prisma/client';
-import { CreateSurveyDTO } from './dto/create-survey.dto';
-import { SurveysService } from './surveys.service';
+import { Get } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
+import { Survey } from "@prisma/client";
+import { CreateSurveyDTO } from "./dto/create-survey.dto";
+import { SurveysService } from "./surveys.service";
 
-@Controller('surveys')
+@Controller("surveys")
 export class SurveysController {
 	constructor(private readonly surveyService: SurveysService) {}
 
@@ -13,7 +14,7 @@ export class SurveysController {
 	}
 
 	@Get()
-	async show(): Promise<Survey[]> {
-		return this.surveyService.showAllSurveys();
+	async show() {
+		return this.surveyService.findAllSurveys();
 	}
 }

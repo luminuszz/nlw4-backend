@@ -1,4 +1,4 @@
-import { Survey as PrimaSurvey } from '@prisma/client';
+import { Survey as PrimaSurvey } from "@prisma/client";
 
 export class Survey implements PrimaSurvey {
 	id: string;

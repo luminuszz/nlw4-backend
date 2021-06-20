@@ -4,7 +4,7 @@ import * as request from "supertest";
 import { AppModule } from "../src/app.module";
 import { userFactory } from "../src/shared/utils/user.util";
 
-describe("users.controller (e2e)", () => {
+describe("users.module (e2e)", () => {
 	let app: INestApplication;
 
 	let server: any;
